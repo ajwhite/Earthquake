@@ -1,9 +1,12 @@
 
 
-<div class="row marketing">
-  <select ng-model="timeframe" ng-options="timeframe.label for timeframe in timeframes"></select>
-  Total Quakes: <span ng-bind="totalQuakes"></span>
-  <earthquake-map timeframe="timeframe" total="totalQuakes"></earthquake-map>
+<div class="row">
+  <div class="col-md-12">
+    <select ng-model="timeframe" ng-options="timeframe.label for timeframe in timeframes" class="form-control" style="width: 200px; display:inline-block;"></select>
+    Total Quakes: <span ng-bind="totalQuakes"></span>
+    <br/><br/>
+    <earthquake-map timeframe="timeframe" total="totalQuakes"></earthquake-map>
+  </div>
 </div>
 <style tyle="text/css">
 path {
