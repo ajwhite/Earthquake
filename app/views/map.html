@@ -1,23 +1,14 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
-  </ul>
-  <h3 class="text-muted">Earthquake</h3>
-</div>
+
 
 <div class="row marketing">
-  <earthquake-map></earthquake-map>
+  <select ng-model="timeframe" ng-options="timeframe.label for timeframe in timeframes"></select>
+  Total Quakes: <span ng-bind="totalQuakes"></span>
+  <earthquake-map timeframe="timeframe" total="totalQuakes"></earthquake-map>
 </div>
 <style tyle="text/css">
 path {
   stroke: white;
-  stroke-width: 0.25px;
+  stroke-width: 1px;
   fill: grey;
 }
 </style>
-
-<div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-</div>
