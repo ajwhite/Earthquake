@@ -8,15 +8,15 @@ angular.module('earthquakeApp').directive('earthquakeMap', function ($window) {
     link: function (scope, element) {
       var firebase = new Firebase('https://publicdata-earthquakes.firebaseio.com/by_continent/'),
           width = angular.element($window).width(),
-          height = 500,
+          height = 700,
           now = (new Date()).getTime(),
           projection, svg, path, g, zoom,
           quakes;
 
       projection = d3.geo.mercator()
-        .center([0, 5])
+        .center([0, 40])
         .scale(200)
-        .rotate([-180, 0]);
+        .rotate([30, 0]);
 
       svg = d3.select(element[0]).append('svg')
         .attr('width', width)
